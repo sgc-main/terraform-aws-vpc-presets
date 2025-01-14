@@ -23,13 +23,6 @@ data "aws_ami" "ami" {
 }
 
 data "aws_vpc" "vpc" {
-  filter {
-    name   = "tag:Name"
-    values = [var.vpc_name]
-  }
-}
-
-data "aws_vpc" "vpc" {
   for_each = var.vpc_name != "" ? toset([var.vpc_name]) : []
   filter {
     name   = "tag:Name"

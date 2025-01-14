@@ -22,7 +22,7 @@ variable tags {
 }
 
 module "vpc_presets" {
-  source   = "sgc-main/vpc-presets/aws"
+  source   = "github.com/sgc-main/terraform-aws-vpc-presets"
   vpc_name = lookup(var.vpc_presets, "VpcName")
   subnets  = lookup(var.vpc_presets, "SubnetNames")
   ami_name = lookup(var.vpc_presets, "AmiName")
@@ -43,7 +43,7 @@ module "security_group" {
 }
 
 module "ec2-1" {
-  source = "sgc-main/ec2/aws"
+  source = "github.com/sgc-main/terraform-aws-ec2"
 
   ami                    = module.vpc_presets.ami_id
   subnet_ids             = module.vpc_presets.subnet_ids
