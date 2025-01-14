@@ -1,0 +1,39 @@
+formatter: markdown table
+
+output-values:
+  enabled: false
+  from: ""
+
+sort:
+  enabled: true
+  by: name
+
+output:
+  file: README.md
+  mode: inject
+
+settings:
+  color: true
+  escape: true
+  hide-empty: true
+  indent: 3
+  required: false
+  sensitive: true
+
+content: |-
+  {{ .Requirements }}
+
+  {{ .Providers }}
+
+  {{ .Resources }}
+
+  ### Examples
+
+  main.tf  
+  ```hcl
+  {{ include "examples/main.tf" }}
+  ```  
+
+  {{ .Inputs }}
+
+  {{ .Outputs }}
