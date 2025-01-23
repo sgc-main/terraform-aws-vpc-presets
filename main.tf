@@ -18,6 +18,15 @@ data "aws_ami" "ami" {
     name   = "name"
     values = [each.key]
   }
+
+  dynamic "filter" {
+    for_each = var.custom_ami_filters
+    content {
+      name   = filter.key
+      values = filter.value
+    }
+  }
+
   owners      = concat(["self"], local.ami_owners)
   most_recent = true
 }

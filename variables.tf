@@ -12,6 +12,12 @@ variable ami_owners {
   default     = ""
 }
 
+variable "custom_ami_filters" {
+  description = "Map of custom AMI filters where keys are filter names and values are filter values."
+  type        = map(list(string))
+  default     = {}
+}
+
 variable "subnets" {
   description = "Comma separated string of subnet name tags"
   default     = ""

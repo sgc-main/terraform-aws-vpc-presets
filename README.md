@@ -100,6 +100,7 @@ module "ec2-1" {
 | <a name="input_ami_architecture"></a> [ami\_architecture](#input\_ami\_architecture) | AMI Architecture | `string` | `"x86_64"` |
 | <a name="input_ami_name"></a> [ami\_name](#input\_ami\_name) | AMI Name Tag | `string` | `""` |
 | <a name="input_ami_owners"></a> [ami\_owners](#input\_ami\_owners) | AMI Owners List | `string` | `""` |
+| <a name="input_custom_ami_filters"></a> [custom\_ami\_filters](#input\_custom\_ami\_filters) | Map of custom AMI filters where keys are filter names and values are filter values. | `map(list(string))` | `{}` |
 | <a name="input_subnets"></a> [subnets](#input\_subnets) | Comma separated string of subnet name tags | `string` | `""` |
 | <a name="input_vpc_name"></a> [vpc\_name](#input\_vpc\_name) | VPC Name Tag | `string` | `""` |
 
@@ -109,6 +110,7 @@ module "ec2-1" {
 |------|-------------|
 | <a name="output_ami_id"></a> [ami\_id](#output\_ami\_id) | AMI ID. |
 | <a name="output_ami_ids"></a> [ami\_ids](#output\_ami\_ids) | AMI ID list. |
+| <a name="output_ami_platform"></a> [ami\_platform](#output\_ami\_platform) | AMI OS Type. |
 | <a name="output_az_ids"></a> [az\_ids](#output\_az\_ids) | List of Availability Zones for Subnets. |
 | <a name="output_cidr_blocks"></a> [cidr\_blocks](#output\_cidr\_blocks) | List of CIDR Blocks for the used Subnets. |
 | <a name="output_subnet_ids"></a> [subnet\_ids](#output\_subnet\_ids) | List of Subnet IDs. |
